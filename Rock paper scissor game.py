@@ -1,25 +1,26 @@
 def game():
     import random
     choices = ["rock", "paper", "scissors"]
-    print("Choose any:", ', '.join(choices[:3]))
-
+    print("Choose any : ", ", ".join(choices[:3]))
     def computerchoice():
         return random.choice(choices)
-    
     def userchoice():
-        return input("Enter your choice : ").lower()
-    
-    def check(user, comp):
-        if user == comp:
+        return input("Enter Your Choice : ").lower()
+    def check(user, computer):
+        if user == computer:
             print("It's a tie!")
-        elif (user == "rock" and comp == "scissors") or (user == "paper" and comp == "rock") or (user == "scissors" and comp == "paper"):
-            print("User wins!")
-        elif (comp == "rock" and user == "scissors") or (comp == "paper" and user == "rock") or (comp == "scissors" and user == "paper"):
-            print("Computer wins!")
+        elif (user == "rock" and computer == "scissors") or \
+            (user == "paper" and computer == "rock") or \
+            (user == "scissors" and computer == "paper"):
+            print("user wins!")
+        elif (computer == "rock" and user == "scissors") or \
+            (computer == "paper" and user == "rock") or \
+            (computer == "scissors" and user == "paper"):
+            print("user wins!")
         else:
-            print("Sorry invalid input.")
-    comp = computerchoice()
+            print("Invalid Input!")
     user = userchoice()
-    print(f"computer has choosen : {comp}")
-    check(user, comp)
+    computer = computerchoice()
+    print(f"Computer pulled out : {computer}")
+    check(user, computer)
 game()
